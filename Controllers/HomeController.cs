@@ -17,8 +17,6 @@ namespace netcore_mvc.Controllers
         public IActionResult Index()
         {
             return View();
-            
-            //return Redirect("Login");
         }
 
         public IActionResult Error()

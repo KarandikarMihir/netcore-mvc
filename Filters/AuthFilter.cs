@@ -12,7 +12,7 @@ namespace netcore_mvc.Filters
             if (!context.HttpContext.Session.Keys.Contains("user"))
             {
                 context.HttpContext.Response.Redirect("Login");
-            }            
+            }
         }
     }
 }
