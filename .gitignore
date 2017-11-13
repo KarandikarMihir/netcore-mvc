@@ -40,3 +40,4 @@ node_modules
 launchSettings.json
 TestResults/
 global.json
+db.sql

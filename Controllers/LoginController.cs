@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using netcore_mvc.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace netcore_mvc.Controllers {
+    
     public class LoginController : Controller
     {
         public IActionResult Index()

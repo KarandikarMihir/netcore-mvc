@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -17,8 +18,24 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">ASP Net Core</a>
+        @if (!String.IsNullOrWhiteSpace(Context.Session.GetString("user")))
+        {
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/UserManager">User Manager</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <span class="navbar-text">
+                @Context.Session.GetString("user")
+            </span>
+        }
     </nav>
     <div class="container body-content">
         @RenderBody()
