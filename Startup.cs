@@ -25,6 +25,7 @@ namespace netcore_mvc
             services.AddMemoryCache();
             services.AddSession();
             services.AddMvc();
+            services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

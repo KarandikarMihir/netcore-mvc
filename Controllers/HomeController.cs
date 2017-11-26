@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using netcore_mvc.Models;
 using Microsoft.AspNetCore.Authorization;
 using netcore_mvc.Filters;
+using netcore_mvc.SQL;
 
 namespace netcore_mvc.Controllers
 {
@@ -16,6 +17,12 @@ namespace netcore_mvc.Controllers
         [AuthFilter]
         public IActionResult Index()
         {
+            SqlUtility util = new SqlUtility();
+            List<UserModel> Users = new List<UserModel>();
+            util.Connect();
+            Users = util.GetUsers();
+            util.Disconnect();
+            ViewData["users"] = Users.ToList();
             return View();
         }
 
